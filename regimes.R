@@ -139,3 +139,10 @@ saveGIF(simulate.points(sq,d=3),
         movie.name = "dense.gif",convert="convert",
         # ani.dev = function(...){png(res=75*grain,...)},
         ani.width = 500*grain, ani.height=500*grain)
+
+
+
+
+
+
+

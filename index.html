@@ -226,38 +226,31 @@ count: false
 
 
 ---
-# Stochastic Topology
+# Random Topology
 
-Given a probability space `\((\Omega,\mathcal{F},\mathbb{P})\)` and some metric-space `\(\mathcal{X}\)`
+* Given a probability space `\((\Omega,\mathcal{F},\mathbb{P})\)` and some metric-space `\(\mathcal{X}\)`
 
-
---
-`\(\mathbb{X}_n = \{ \boldsymbol{X}_1, \boldsymbol{X}_2, \dots \boldsymbol{X}_n \} \sim \mathbb{P}\)`
-
-
-  * A fixed probability measure, i.e., observed i.i.d.
-  
-  * A random field, e.g., Poisson Process
+* `\(\mathbb{X}_n = \{ \boldsymbol{X}_1, \boldsymbol{X}_2, \dots \boldsymbol{X}_n \} \sim \mathbb{P}\)`
+  - A fixed probability measure, i.e., observed i.i.d.
+  - A random field, e.g., Poisson Process
 
 
 --
-&lt;br/&gt;
-`\(\mathcal{K}(\mathbb{X}_n,r)\)` is a random-variable measurable w.r.t. `\(\mathbb{P}^{\otimes n}\)`
-&lt;br/&gt;&lt;br/&gt;
+* A simplicial complex, `\(\mathcal{K}(\mathbb{X}_n,r)\)`, is a random-variable measurable w.r.t. `\(\mathbb{P}^{\otimes n}\)`
 
 
 --
-`\(\boldsymbol{S} : \mathcal{X}^n \rightarrow \mathcal{S}\)` is a topological summary
-  * `\(\beta_k(\mathbb{X}_n) : \mathcal{X}^n \rightarrow \mathbb{N}\)`
-  
-  * `\(\textbf{Dgm}(\mathbb{X}_n) : \mathcal{X}^n \rightarrow \{(x,y) : 0 \le x &lt; y \le \infty \}\)`
-  
+* `\(\mathbf S : \mathcal X^n \rightarrow \ S\)` is a topological summary, e.g., `\(\beta_k \left( \mathcal{K}(\mathbb{X}_n,r) \right) : \mathcal{X}^n \rightarrow \mathbb{N}\)`
+
 --
 &lt;br/&gt;&lt;br/&gt;
 
-**.purple[Objective:]** &amp;nbsp; &amp;nbsp; What are the properties of these random topological summaries?&lt;br/&gt;
-
-.caption[Edelsbrunner and Harer (2010); Mileyko, Mukherjee, and Harer (2011)]
+* What are the properties of these **.purple[random]** topological summaries?
+`\begin{align}
+\text{(LLN)} &amp; &amp; \lim\limits_{n\rightarrow \infty}\frac{1}{n}\beta_k\left( \mathcal{K}(\mathbb{X}_n,r) \right) = \color{purple}{\gamma_k(\mathbb{P})} \ \ \text{a.s.} \hspace{2cm}\\ \\
+\text{(CLT)} &amp; &amp; \lim\limits_{n\rightarrow \infty}\frac{\beta_k\left( \mathcal{K}(\mathbb{X}_n,r) \right) - \mathbb{E}(\beta_k\left( \mathcal{K}(\mathbb{X}_n,r) \right))}{\sqrt{n}}  \sim \color{purple}{\mathcal{N}(0,\sigma^2)}
+\end{align}`
+.tiny[.caption[Bobrowski and Kahle (2018); Kahle and Meckes (2013); Yogeshwaran, Subag, and Adler (2017)]]
 
 ---
 layout: true
@@ -265,7 +258,15 @@ class: center,split-three
 
 # .left[Asymptotic Regimes]
 
-In the simplicial complex `\(\mathcal{K}\left( \mathbb{X}_n, \mathbf{r_n} \right)\)`, `\(r_n\)` depends on `\(n\)`
+In the simplicial complex `\(\mathcal{K}\left( \mathbb{X}_n, {r_n} \right)\)`, `\(r_n\)` depends on `\(n\)`
+
+.column.bg-main1[.content[
+&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;
+.center[
+Dense
+&lt;img src="images/dense.gif" width="300",height="300"&gt;]
+`\(nr_n^d \rightarrow \infty\)`
+]]
 
 .column.bg-main1[.content[
 &lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;
@@ -283,48 +284,22 @@ Thermodynamic
 `\(nr_n^d \rightarrow t \in (0,\infty)\)`
 ]]
 
-.column.bg-main1[.content[
-&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;
-.center[
-Dense
-&lt;img src="images/dense.gif" width="300",height="300"&gt;]
-`\(nr_n^d \rightarrow \infty\)`
-]]
+---
+
+class: show-000
 
 ---
 
 class: show-100
-&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;
-
 
 ---
 
 class: show-110
 count: false
 
-
 ---
 class: show-111
 count: false
-
-
----
-layout: false
-# Random Betti Numbers
-
-&lt;br/&gt;&lt;br/&gt;&lt;br/&gt;
-* Law of Large Numbers: 
-$$
-\lim\limits_{n\rightarrow \infty}\frac{1}{n}\beta_k(\mathbb{X}_n,r_n) = \color{red}{\gamma_k(\mathbb{P})} \ \ \text{a.s.}
-$$
-&lt;br/&gt;&lt;br/&gt;&lt;br/&gt;
-* Central Limit Theorem: 
-$$
-\lim\limits_{n\rightarrow \infty}\frac{\beta_k(\mathbb{X}_n,r_n) - \mathbb{E}(\beta_k(\mathbb{X}_n,r_n))}{\sqrt{n}}  \sim \mathcal{N}(0,\sigma^2)
-$$
-&lt;br/&gt;&lt;br/&gt;&lt;br/&gt;
-
-.caption[Bobrowski and Kahle (2018); Kahle and Meckes (2013); Yogeshwaran, Subag, and Adler (2017)]
 
 
 ---
@@ -352,7 +327,7 @@ layout: false
 --
 * **.purple[Invariance.]** 
 
-.center[&lt;body&gt;  `\(\bbox[20px, border: 2px solid orange]{ \text{For } \theta_1,\theta_2 \in \Theta, \text{ can we have that } \lim\limits_{n\rightarrow \infty}\mathbf{S}(\mathbb{P}_{\theta_1}^{\otimes n}) {=} \mathbf{S}(\mathbb{P}_{\theta_2}^{\otimes n}) \text{ ? } }\)`&lt;/body&gt;]
+.center[&lt;body&gt;  `\(\bbox[20px, border: 2px solid orange]{ \text{For } \theta_1,\theta_2 \in \Theta, \text{ can we have that } \lim\limits_{n\rightarrow \infty}\mathbf{S}(\mathbb{P}_{\theta_1}^{\otimes n}) {=} \lim\limits_{n\rightarrow \infty}\mathbf{S}(\mathbb{P}_{\theta_2}^{\otimes n}) \text{ ? } }\)`&lt;/body&gt;]
 
 --
 * **Example (1).**
@@ -378,7 +353,7 @@ count: false
 
 * **.purple[Invariance.]** 
 
-.center[&lt;body&gt;  `\(\bbox[20px, border: 2px solid orange]{ \text{For } \theta_1,\theta_2 \in \Theta, \text{ can we have that } \lim\limits_{n\rightarrow \infty}\mathbf{S}(\mathbb{P}_{\theta_1}^{\otimes n}) {=} \mathbf{S}(\mathbb{P}_{\theta_2}^{\otimes n}) \text{ ? } }\)`&lt;/body&gt;]
+.center[&lt;body&gt;  `\(\bbox[20px, border: 2px solid orange]{ \text{For } \theta_1,\theta_2 \in \Theta, \text{ can we have that } \lim\limits_{n\rightarrow \infty}\mathbf{S}(\mathbb{P}_{\theta_1}^{\otimes n}) {=} \lim\limits_{n\rightarrow \infty}\mathbf{S}(\mathbb{P}_{\theta_2}^{\otimes n}) \text{ ? } }\)`&lt;/body&gt;]
 
 
 
@@ -405,7 +380,7 @@ count: false
 
 * **.purple[Invariance.]** 
 
-.center[&lt;body&gt;  `\(\bbox[20px, border: 2px solid orange]{ \text{For } \theta_1,\theta_2 \in \Theta, \text{ can we have that } \lim\limits_{n\rightarrow \infty}\mathbf{S}(\mathbb{P}_{\theta_1}^{\otimes n}) {=} \mathbf{S}(\mathbb{P}_{\theta_2}^{\otimes n}) \text{ ? } }\)`&lt;/body&gt;]
+.center[&lt;body&gt;  `\(\bbox[20px, border: 2px solid orange]{ \text{For } \theta_1,\theta_2 \in \Theta, \text{ can we have that } \lim\limits_{n\rightarrow \infty}\mathbf{S}(\mathbb{P}_{\theta_1}^{\otimes n}) {=} \lim\limits_{n\rightarrow \infty}\mathbf{S}(\mathbb{P}_{\theta_2}^{\otimes n}) \text{ ? } }\)`&lt;/body&gt;]
 
 
 * **Example (3).**
@@ -431,7 +406,7 @@ count: false
 
 * **.purple[Invariance.]** 
 
-.center[&lt;body&gt;  `\(\bbox[20px, border: 2px solid orange]{ \text{For } \theta_1,\theta_2 \in \Theta, \text{ can we have that } \lim\limits_{n\rightarrow \infty}\mathbf{S}(\mathbb{P}_{\theta_1}^{\otimes n}) {=} \mathbf{S}(\mathbb{P}_{\theta_2}^{\otimes n}) \text{ ? } }\)`&lt;/body&gt;]
+.center[&lt;body&gt;  `\(\bbox[20px, border: 2px solid orange]{ \text{For } \theta_1,\theta_2 \in \Theta, \text{ can we have that } \lim\limits_{n\rightarrow \infty}\mathbf{S}(\mathbb{P}_{\theta_1}^{\otimes n}) {=} \lim\limits_{n\rightarrow \infty}\mathbf{S}(\mathbb{P}_{\theta_2}^{\otimes n}) \text{ ? } }\)`&lt;/body&gt;]
 
 
 
@@ -459,7 +434,7 @@ count: false
 
 * **.purple[Invariance.]** 
 
-.center[&lt;body&gt;  `\(\bbox[20px, border: 2px solid orange]{ \text{For } \theta_1,\theta_2 \in \Theta, \text{ can we have that } \lim\limits_{n\rightarrow \infty}\mathbf{S}(\mathbb{P}_{\theta_1}^{\otimes n}) {=} \mathbf{S}(\mathbb{P}_{\theta_2}^{\otimes n}) \text{ ? } }\)`&lt;/body&gt;]
+.center[&lt;body&gt;  `\(\bbox[20px, border: 2px solid orange]{ \text{For } \theta_1,\theta_2 \in \Theta, \text{ can we have that } \lim\limits_{n\rightarrow \infty}\mathbf{S}(\mathbb{P}_{\theta_1}^{\otimes n}) {=} \lim\limits_{n\rightarrow \infty}\mathbf{S}(\mathbb{P}_{\theta_2}^{\otimes n}) \text{ ? } }\)`&lt;/body&gt;]
 
 
 * **.purple[Definition.]**
@@ -513,25 +488,49 @@ class: inverse, center, middle
 
 
 ---
-layout: false
+layout: true
+class: center,split-two
 
-# Group Invariance in Statistics
+# .left[Group Invariance in Statistics]
 
-* Let `\(\mathcal{G} = \{ g_\theta : \theta \in \Theta \}\)` be a topological group acting bijectively on `\(\mathcal{X}\)`
+.column.top[.content[
+&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;
+.left[.small[
+* `\(\mathcal{G} = \{ g_\theta : \theta \in \Theta \}\)` is a group acting on `\(\mathcal{X}\)`&lt;br&gt;&lt;br&gt;
 
 * Consider a map `\(T: \mathcal{X} \rightarrow \mathcal{T}\)`
-
-  - `\(T\)` is `\(\color{purple}{\mathcal{G}}\)`.purple[-invariant] if it is constant on orbits, i.e., `\(T(g_\theta\cdot\mathbf{x}) = T(\mathbf{x})\)`
+  - `\(T\)` is `\(\color{purple}{\mathcal{G}}\)`.purple[-invariant] if it is constant on orbits, i.e., .center[ &lt;body&gt; `\(T(g_\theta\cdot\mathbf{x}) = T(\mathbf{x})\)` &lt;/body&gt; ]
   
-  - `\(T\)` is `\(\color{red}{\mathcal{G}}\)`.red[-maximal invariant] if it is constant **only** on orbits, i.e.,.center[ &lt;body&gt; `\(T(\mathbf{x}) = T(\mathbf{y})\)` if and only if `\(\mathbf{y} \in \mathcal{G}\mathbf{x}\)` &lt;/body&gt;]
+  - `\(T\)` is `\(\color{red}{\mathcal{G}}\)`.red[-maximal invariant] if it is constant **only** on orbits, i.e.,
+  
+  .center[ &lt;body&gt; `\(T(\mathbf{x}) = T(\mathbf{y})\)` if and only if `\(\mathbf{y} \in \mathcal{G}\mathbf{x}\)` &lt;/body&gt;]
+  
+* If `\(\mathbf{X} \sim f\)` be a random variable
+  - The action of `\(\mathcal{G}\)` on `\(\mathbf{X}\)` *induces* `\(g_\theta \cdot \mathbf{X} \sim f_\theta\)`
+]]]]
+
+.column.bg-main1.top[.content[
+&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;
+.center[&lt;img src="images/group2.svg" width="400",height="400"&gt;]]
+]
+
+---
+
+class: show-11
+count: true
+
+---
+class: show-11
+count: false
+
+&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;
+
+`\(\mathcal{G} = \{ g_\theta : \theta \in \Theta \}\)` *generates* a family of distributions `\(\mathcal{F} = \{f_\theta : \theta \in \Theta\}\)`
+
+.tiny.left[.caption[Eaton (1989); Wijsman (1990)]]
 
 
---
-* Let `\(\mathbf{X} \sim f\)` be a random variable taking values in `\(\mathcal{X}\)`
 
-* The action of `\(g \in \mathcal{G}\)` on `\(\mathbf{X}\)` *induces* a new random variable `\(g_\theta \cdot \mathbf{X} \sim f_\theta\)`
-
-* `\(\mathcal{G} = \{ g_\theta : \theta \in \Theta \}\)` *generates* a family of distributions `\(\mathcal{F} = \{f_\theta : \theta \in \Theta\}\)`
 
 ---
 layout: false
@@ -541,18 +540,18 @@ layout: false
 .content-box-purple[**.purple[Theorem.]** 
 * Define a family of distributions `\(\mathcal{F} = \{ f_\theta : \theta \in \Theta \}\)` by
 `\begin{align}
-\smash{f_\theta(x) := \phi\big( g_\theta \circ \Psi(x) \big),}
+\smash{f_\theta(x) := \xi\big( g_\theta \circ \Psi(x) \big),}
 \end{align}`
 where 
   - `\(\Psi:\mathcal{X} \rightarrow \mathcal{Y}\)` is differentiable 
   - `\(\mathcal{G} = \{ g_\theta : \theta \in \Theta \}\)` is a group of isometries on `\(\mathcal{Y}\)`
   - `\(T:\mathcal{Y} \rightarrow \mathcal{T}\)` is `\(\mathcal{G}\)`-maximal invariant
-  - `\(\phi\)` ensures `\(f_\theta\)` is a valid density function. 
+  - `\(\xi\)` ensures `\(f_\theta\)` is a valid density function. 
 
  
 * Then, `\(\mathcal{F}\)` admits `\(\beta\)`-equivalence if and only if there exists some `\(\zeta:\mathcal{T} \rightarrow \mathbb{R}\)`
 `\begin{align}
-\text{det}(J_{\Psi^{-1}}(y)) = \zeta(T(y)),
+\text{det}(J_{\Psi^{-1}}(y)) = \zeta(T(y))
 \end{align}`
 ]
 
@@ -609,52 +608,102 @@ class: inverse, center, middle
 # Statistical Invariance
 ## .orange[via Excess Mass]
 
-
-
 ---
 layout: false
 
 # Statistical Invariance - II
 
-.small[
-- For `\(\mathbb{P}\)` with pdf `\(f\)`, the **.purple[excess mass function]** is given by `\(\hat{f}(t)\!:=\!\mathbb{P}\big(\!\{ \mathbf{x}\!\in\!\mathcal{X}\!:\!f(\mathbf{x})\!\ge\!t \}\!\big)\)`&lt;br&gt;
-  `\(\hspace{1cm}\)` <span>&lt;i class="fas  fa-hand-point-right faa-horizontal animated "&gt;&lt;/i&gt;</span> If `\(\mathbf{X} \sim f\)` and `\(\mathbf{Y} \sim g\)`, then `\(f(\mathbf{X}) \stackrel{d}{=} g(\mathbf{Y}) \iff \hat{f} = \hat{g}\)`
+
+- For `\(\mathbb{P}\)` with pdf `\(f\)`, the **.purple[excess mass function]** is given by 
+`\begin{align}
+\hat{f}(t) := \mathbb{P}\big( \{ \mathbf{x} \in \mathcal{X} : f(\mathbf{x}) \ge t \} \big)
+\end{align}`
+
+
+.center[&lt;img src="images/emf-1.svg" width="600",height="400"&gt;]
+
+
+---
+layout: false
+count: false
+
+# Statistical Invariance - II
+
+
+- For `\(\mathbb{P}\)` with pdf `\(f\)`, the **.purple[excess mass function]** is given by 
+`\begin{align}
+\hat{f}(t) := \mathbb{P}\big( \{ \mathbf{x} \in \mathcal{X} : f(\mathbf{x}) \ge t \} \big)
+\end{align}`
+
+
+.center[&lt;img src="images/emf-2.svg" width="600",height="400"&gt;]
+
+---
+layout: false
+count: false
+
+# Statistical Invariance - II
+
+
+- For `\(\mathbb{P}\)` with pdf `\(f\)`, the **.purple[excess mass function]** is given by 
+`\begin{align}
+\hat{f}(t) := \mathbb{P}\big( \{ \mathbf{x} \in \mathcal{X} : f(\mathbf{x}) \ge t \} \big)
+\end{align}`
+
+
+.center[&lt;img src="images/emf-3.svg" width="600",height="400"&gt;]
+
+
+---
+layout: false
+count: false
+
+# Statistical Invariance - II
+
+
+- For `\(\mathbb{P}\)` with pdf `\(f\)`, the **.purple[excess mass function]** is given by 
+`\begin{align}
+\hat{f}(t) := \mathbb{P}\big( \{ \mathbf{x} \in \mathcal{X} : f(\mathbf{x}) \ge t \} \big)
+\end{align}`
+
+.content-box-purple.center[
+.large[<span>&lt;i class="fas  fa-hand-point-right faa-horizontal animated "&gt;&lt;/i&gt;</span>] `\(\hspace{0.5cm}\)` If `\(\mathbf{X} \sim f\)` and `\(\mathbf{Y} \sim g\)`, then `\(f(\mathbf{X}) \stackrel{d}{=} g(\mathbf{Y}) \iff \hat{f} = \hat{g}\)`
 ]
 
---
-.small[
-- Given a measure `\(\mu\)` on `\(\mathcal{X}\)`, a function `\(\Psi(\cdot)\)` is the .purple[modular character of] `\(\color{purple}{\mu}\)` if &lt;br&gt; for each `\(\phi \in \text{Diff}(\mathcal{X})\)` and `\(\mathbf{y} = \phi(\mathbf{x})\)`, `\(\hspace{0.25cm}\mu(d\mathbf{y}) = \Psi(|\text{det}J_\phi|)\mu(d\mathbf{x})\)`&lt;br&gt;&lt;br&gt;
+&lt;br&gt;&lt;br&gt;&lt;br&gt;
+
 
 --
+
+- Given a measure `\(\mu\)` on `\(\mathcal{X}\)`, a function `\(\Psi(\cdot)\)` is the .purple[modular character of] `\(\color{purple}{\mu}\)` if &lt;br&gt; for each `\(\phi \in \text{Diff}(\mathcal{X})\)` and `\(\mathbf{y} = \phi(\mathbf{x})\)`, `\(\hspace{0.25cm}\mu(d\mathbf{y}) = \Psi(|\text{det}J_\phi|)\mu(d\mathbf{x})\)`&lt;br&gt;&lt;br&gt;&lt;br&gt;
+
+--
+
 `\(\hspace{1cm}\)` **Example.** When `\(\mathcal{X} = \mathbb{R}^d\)` and `\(\mu = \nu_d\)` (Lebesgue), `\(\Psi(x) = x\)`
-]
+
 
 ---
 layout: false
 
 # Statistical Invariance - II
 
-.small[
-- For `\(\mathbb{P}\)` with pdf `\(f\)`, the **.purple[excess mass function]** is given by `\(\hat{f}(t)\!:=\!\mathbb{P}\big(\!\{ \mathbf{x}\!\in\!\mathcal{X}\!:\!f(\mathbf{x})\!\ge\!t \}\!\big)\)`&lt;br&gt;
-  `\(\hspace{1cm}\)` <span>&lt;i class="fas  fa-hand-point-right faa-horizontal animated "&gt;&lt;/i&gt;</span> If `\(\mathbf{X} \sim f\)` and `\(\mathbf{Y} \sim g\)`, then `\(f(\mathbf{X}) \stackrel{d}{=} g(\mathbf{Y}) \iff \hat{f} = \hat{g}\)`
-]
+.content-box-purple[
 
-.small[
-- Given a measure `\(\mu\)` on `\(\mathcal{X}\)`, a function `\(\Psi(\cdot)\)` is the .purple[modular character of] `\(\color{purple}{\mu}\)` if &lt;br&gt; for each `\(\phi \in \text{Diff}(\mathcal{X})\)` and `\(\mathbf{y} = \phi(\mathbf{x})\)`, `\(\hspace{0.25cm}\mu(d\mathbf{y}) = \Psi(|\text{det}J_\phi|)\mu(d\mathbf{x})\)`&lt;br&gt;
-]
-
-.small[.content-box-purple[**.purple[Theorem.]** 
+**.purple[Theorem.]** 
 
 Suppose `\(g\)` is a probability density on `\(\mathcal{X}\)` w.r.t. `\(\hspace{0.2cm} \nu\)` with modular character `\(\Psi\)` &lt;br&gt; 
-    `\(\hspace{2cm}\)` (1) `\(\text{supp}(g) = K \subset \mathcal{X}\)`, &lt;br&gt; 
-    `\(\hspace{2cm}\)` (2) Let `\(\{\phi_1 \dots \phi_n\}\)` be maps such that `\(K_i := \phi_i(K)\)` and `\(\nu(K_i \cap K_j) = 0\)`.&lt;br&gt;
+    `\(\hspace{0.5cm}\)` (1) `\(\text{supp}(g) = K \subset \mathcal{X}\)`, &lt;br&gt; 
+    `\(\hspace{0.5cm}\)` (2) Let `\(\{\phi_1 \dots \phi_n\}\)` be maps such that `\(K_i := \phi_i(K)\)` and `\(\nu(K_i \cap K_j) = 0\)`.&lt;br&gt;
 
 Define the density `\(f_\phi\)` by
 `\begin{align}
 f_\phi(\mathbf{x}) = \smash{\sum_{i=1}^n{g(\phi_i(\mathbf{x}))}}\mathbf{1}(\mathbf{x} \in K_i)
 \end{align}`
+
+&lt;br&gt;
+
 Then, `\(\mathcal{F} = \{ f_\phi : \phi \in \Phi \}\)` admits `\(\beta\)`-equivalence for &lt;br&gt;
-.center[ &lt;body&gt; `\(\Phi := \Big\{ \phi_1 \dots \phi_n : \sum\limits_{i=1}^n{\Psi(|\text{det}J_{\phi^{-1}_i}|)}=1 \Big\}\)` &lt;/body&gt; ] ] ]
+.center[ &lt;body&gt; `\(\Phi := \Big\{ \phi_1 \dots \phi_n : \sum\limits_{i=1}^n{\Psi(|\text{det}J_{\phi^{-1}_i}|)}=1 \Big\}\)` &lt;/body&gt; ] ]
 
 
 ---
@@ -720,7 +769,8 @@ count: false
 &lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;
 
 .content-box-purple[.small[
-`\(\{ f_\phi : \phi \in \Phi \}\)` admits `\(\beta\)`-equivalence for `\(\Phi := \Big\{ \phi : \displaystyle\int_{\mathcal Z}{\Psi\left( \big\lvert \text{det}J_{\phi_z^{-1}} \big\rvert  \right) \mu(dz)} = 1 \Big\}\)`
+**.purple[Theorem.]** `\(\{ f_\phi\!:\!\phi\!\in\!\Phi \}\)` admits `\(\beta\)`-equivalence for 
+`\(\Phi := \Big\{ \phi\!:\!\!\displaystyle\int_{\mathcal Z}\!{\!\Psi\left( \big\lvert \text{det}J_{\phi_z^{-1}} \big\rvert  \right)\!\mu(dz)}\!=\!1 \Big\}\)`
 ]]
 
 ---
@@ -733,9 +783,8 @@ layout: false
 --
 .content-box-purple[
 **.purple[Theorem.]**
-Given `\(\mathcal F = \{ f_\theta : \theta \in \Theta \}\)` where `\(\Theta\)` contains an open set in `\(\mathbb R^p\)`.
+`\(\mathcal F = \{ f_\theta : \theta \in \Theta \}\)` admits `\(\beta\)`-equivalence if and only if for all `\(k \in \mathbb N\)`
 
-`\(\mathcal F\)` admits `\(\beta\)`-equivalence if and only if for all `\(k \in \mathbb N\)`
 `\begin{align}
 \nabla_{\theta} \left(\int_{\mathcal X}{f_\theta^{k+1}(\mathbf{x}) d\mathbf{x}}\right) = \mathbf 0
 \end{align}`
@@ -746,6 +795,8 @@ Given `\(\mathcal F = \{ f_\theta : \theta \in \Theta \}\)` where `\(\Theta\)` c
 --
 * Under standard stochastic regularity assumptions, it leads to a geometric constraint on `\(f_\theta\)`&lt;br&gt;&lt;br&gt;
 .content-box-purple[
+`\(\mathcal F = \{ f_\theta : \theta \in \Theta \}\)` admits `\(\beta\)`-equivalence if and only if for all `\(k \in \mathbb N\)`
+
 `\begin{align}
 \big\langle S_{\theta},f_\theta^k \big\rangle_{L_2(\mathcal X)} = \mathbf 0,
 \end{align}`
@@ -757,57 +808,46 @@ where `\(S_{\theta} = \nabla_{\theta}\log f_\theta\)` is the **score function** 
 layout: false
 class: inverse, center, middle
 
-&lt;!-- # ಧನ್ಯವಾದಗಳು! --&gt;
 # Thank you!
+### .remark-inline-code[.orange[arxiv.org/abs/2001.00220]]
 
----
-layout: false
 
-class: inverse, center, middle
-
-# .purple[Appendix]
 
 
 ---
 layout: false
-count: false
+# .orange[References]
 
+Bobrowski, O. and M. Kahle (2018). "Topology of random geometric
+complexes: A survey". In: _Journal of Applied and Computational
+Topology_ 1.3-4, pp. 331-–364.
 
-# Statistical Invariance .purple[of Betti Numbers]
+Eaton, M. L. (1989). _Group Invariance Applications in Statistics_.
+Hayward, CA and Alexandria, VA: Institute of Mathematical Statistics
+and the American Statistical Association, pp. i-133.
 
-* `\(\mathcal{P} =  \{\mathbb{P}_\theta : \theta \in \Theta \}\)` is a family of distributions `\(\hspace{-10cm }^\textbf{*}\)` on `\(\mathcal{X} \subseteq \mathbb{R}^D\)`
-.small[.footnote[
-*Assumptions:
-1. .small[&lt;body&gt; `\(\text{dim}(\mathcal{X}) = d \le D\)`. If `\(d &lt; D\)` then `\(\mathcal{X}\)` is a compact, `\(d\)`-dimensional `\(\mathcal{C}^1\)` manifold &lt;/body&gt; ]
-1. .small[&lt;body&gt; `\(\mathbb{P}_\theta\)` admits a density `\(f_\theta\)` such that `\(f_\theta \in L_p(\mathcal{X})\)` for all `\(p \in \mathbb{N}\)` &lt;/body&gt; ]
-]]
+Goel, A, K. D. Trinh, and K. Tsunoda (2019). "Strong law of large
+numbers for Betti numbers in the thermodynamic regime". In: _Journal of
+Statistical Physics_ 174.4, pp. 865-892.
 
---
-* `\(\mathcal{K}(\mathbb{X}^\theta_n,r_n)\)` is the Čech complex constructed on `\(\mathbb{X}^\theta_n\)` with `\(r_n = r(n)\)`
+Kahle, M. and E. Meckes (2013). "Limit theorems for Betti numbers of
+random simplicial complexes". In: _Homology Homotopy Appl._ 15.1, pp.
+343-374.
 
+Trinh, K. D. (2017). "A remark on the convergence of Betti numbers in
+the thermodynamic regime". In: _Pacific Journal of Mathematics for
+Industry_ 9.1, p. 4.
 
-* The topological summary is .purple[the collection of Betti numbers]
-`\begin{align}
-  \mathbf{S}(\mathbb{P}_{\theta}^{\otimes n}) = \frac{1}{n} \Big( \beta_0\big( \mathcal{K}(\mathbb{X}^\theta_n,r_n) \big), \beta_1\big( \mathcal{K}(\mathbb{X}^\theta_n,r_n) \big), \dots , \beta_d\big( \mathcal{K}(\mathbb{X}^\theta_n,r_n) \big) \Big)
-\end{align}`
+---
+layout: false
+# .orange[References]
 
---
-* As `\(n \rightarrow \infty\)` and `\(nr_n^d \rightarrow t\)`, the **.purple[thermodynamic limit]** is the functional
-`\begin{align}
-\mathbf{S}(\mathbb{P}_\theta; t) = \lim_{n \rightarrow\infty}\mathbf{S}(\mathbb{P}_{\theta}^{\otimes n})
-\end{align}`
+Wijsman, R. A. (1990). _Invariant Measures on Groups and Their Use in
+Statistics_. Hayward, CA: Institute of Mathematical Statistics.
 
---
-.center[&lt;body&gt;  `\({\bbox[20px, border: 2px solid orange]{\color{orange}{\textbf{Objective: }} \text{Under what conditions does } S(\mathbb{P}_\theta; t) = \eta(t) \text{ for all } \theta \in \Theta \text{ ? } }}\)`&lt;/body&gt;]
-
-&lt;!-- --- --&gt;
-&lt;!-- layout: false --&gt;
-&lt;!-- count: false --&gt;
-
-
-&lt;!-- # Future Work --&gt;
-
-&lt;!-- blah blah blah --&gt;
+Yogeshwaran, D, E. Subag, and R. J. Adler (2017). "Random geometric
+complexes in the thermodynamic regime". In: _Probability Theory and
+Related fields_ 167.1-2, pp. 107-142.
     </textarea>
 <style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
 <script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
