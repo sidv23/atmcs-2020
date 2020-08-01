@@ -240,15 +240,15 @@ count: false
 
 
 --
-* `\(\mathbf S : \mathcal X^n \rightarrow \ S\)` is a topological summary, e.g., `\(\beta_k \left( \mathcal{K}(\mathbb{X}_n,r) \right) : \mathcal{X}^n \rightarrow \mathbb{N}\)`
+* `\(\mathbf S : \mathcal X^n \rightarrow \mathcal S\)` is a topological summary, e.g., `\(\beta_k \left( \mathcal{K}(\mathbb{X}_n,r) \right) : \mathcal{X}^n \rightarrow \mathbb{N}\)`
 
 --
 &lt;br/&gt;&lt;br/&gt;
 
 * What are the properties of these **.purple[random]** topological summaries?
 `\begin{align}
-\text{(LLN)} &amp; &amp; \lim\limits_{n\rightarrow \infty}\frac{1}{n}\beta_k\left( \mathcal{K}(\mathbb{X}_n,r) \right) = \color{purple}{\gamma_k(\mathbb{P})} \ \ \text{a.s.} \hspace{2cm}\\ \\
-\text{(CLT)} &amp; &amp; \lim\limits_{n\rightarrow \infty}\frac{\beta_k\left( \mathcal{K}(\mathbb{X}_n,r) \right) - \mathbb{E}(\beta_k\left( \mathcal{K}(\mathbb{X}_n,r) \right))}{\sqrt{n}}  \sim \color{purple}{\mathcal{N}(0,\sigma^2)}
+\text{(LLN)} &amp; &amp; \lim\limits_{n\rightarrow \infty}\frac{1}{n}\beta_k\left( \mathcal{K}(\mathbb{X}_n,r) \right) = \color{red}{\gamma_k(\mathbb{P})} \ \ \text{a.s.} \hspace{2cm}\\ \\
+\text{(CLT)} &amp; &amp; \lim\limits_{n\rightarrow \infty}\frac{\beta_k\left( \mathcal{K}(\mathbb{X}_n,r) \right) - \mathbb{E}(\beta_k\left( \mathcal{K}(\mathbb{X}_n,r) \right))}{\sqrt{n}}  \sim \color{red}{\mathcal{N}(0,\sigma^2)}
 \end{align}`
 .tiny[.caption[Bobrowski and Kahle (2018); Kahle and Meckes (2013); Yogeshwaran, Subag, and Adler (2017)]]
 
@@ -289,7 +289,7 @@ Thermodynamic
 class: show-000
 
 ---
-
+count: false
 class: show-100
 
 ---
@@ -315,26 +315,78 @@ layout: false
 
 # Statistical Invariance of Betti Numbers
 
-* Consider a family of distributions* `\(\mathcal{P} = \{\mathbb{P}_\theta : \theta \in \Theta \}\)`
+* Consider a family of distributions* `\(\mathcal{P}\)` on `\(\mathcal X \subseteq \mathbb R^D\)` with `\(\mathbb P, \mathbb Q \in \mathcal P\)`
 
-* Given `\(\mathbb{X}^\theta_n = \{\mathbf{X}^\theta_1,\mathbf{X}^\theta_2,\dots,\mathbf{X}^\theta_n\} \sim \mathbb{P}_\theta\)`, for `\(\theta \in \Theta\)`
+* Given `\(\mathbb{X}_n= \{ \boldsymbol{X}_1, \boldsymbol{X}_2, \dots \boldsymbol{X}_n \} \sim \mathbb{P}\)` and `\(\mathbb{Y}_m= \{ \boldsymbol{Y}_1, \boldsymbol{Y}_2, \dots \boldsymbol{Y}_m \} \sim \mathbb{Q}\)`
 
 .content-box-purple[
-`\(\mathbf{S}(\mathbb{P}_{\theta}^{\otimes n})\!:= \mathbf{S}(\mathbb{X}^\theta_n)\!= \frac{1}{n} \Big( \beta_0\big( \mathcal{K}(\mathbb{X}^\theta_n,r_n) \big), \beta_1\big( \mathcal{K}(\mathbb{X}^\theta_n,r_n) \big), \dots , \beta_d\big( \mathcal{K}(\mathbb{X}^\theta_n,r_n) \big) \Big)\)`
+`\(\mathbf{S}(\mathbb{P}^{\otimes n})\!:= \mathbf{S}(\mathbb{X}_n)\!= \frac{1}{n} \Big( \beta_0\big( \mathcal{K}(\mathbb{X}_n,r_n) \big), \beta_1\big( \mathcal{K}(\mathbb{X}_n,r_n) \big), \dots , \beta_d\big( \mathcal{K}(\mathbb{X}_n,r_n) \big) \Big)\)`
 ]
 
 
 --
 * **.purple[Invariance.]** 
-
-.center[&lt;body&gt;  `\(\bbox[20px, border: 2px solid orange]{ \text{For } \theta_1,\theta_2 \in \Theta, \text{ can we have that } \lim\limits_{n\rightarrow \infty}\mathbf{S}(\mathbb{P}_{\theta_1}^{\otimes n}) {=} \lim\limits_{n\rightarrow \infty}\mathbf{S}(\mathbb{P}_{\theta_2}^{\otimes n}) \text{ ? } }\)`&lt;/body&gt;]
+.center[&lt;body&gt;  `\(\bbox[20px, border: 2px solid orange]{  \text{Can we have that } \lim\limits_{n\rightarrow \infty}\mathbf{S}(\mathbb{P}^{\otimes n}) {=} \lim\limits_{m\rightarrow \infty}\mathbf{S}(\mathbb{Q}^{\otimes m}) \text{ ? } }\)`&lt;/body&gt;]
 
 --
-* **Example (1).**
+&lt;br&gt;
+* **Example (1).**  Consider `\(\color{red}{\mathcal{P} = \{ \mathcal{N}(\theta,\mathbf{I}_d) : \theta \in \mathbb{R}^d \}}\)` and `\(\color{green}{\mathbf{S}(\mathbb{X}_n) = \overline{\mathbf{X}}_n}\)`
 
-  Consider `\(\color{red}{\mathcal{P} = \{ \mathcal{N}(\theta,\mathbf{I}_d) : \theta \in \mathbb{R}^d \}}\)` and `\(\color{green}{\mathbf{S}(\mathbb{X}_n) = \bar{\mathbf{X}}_n}\)`
-  
-      `\(\hspace{3cm} \lim\limits_{n\rightarrow \infty}\bar{\mathbf{X}}^{\theta_1}_n = \theta_1 \neq \theta_2 = \lim\limits_{n\rightarrow \infty}\bar{\mathbf{X}}^{\theta_2}_n\)`
+.center[
+If `\(\mathbf X_i \sim \mathbb P_{\theta_1}\)` and `\(\mathbf Y_i \sim \mathbb P_{\theta_2}\)` then 
+
+`\(\lim\limits_{n\rightarrow \infty}\overline{\mathbf{X}}_n = \theta_1 \neq \theta_2 = \lim\limits_{m\rightarrow \infty}\overline{\mathbf{Y}}_m\)`
+]
+---
+layout: false
+count: false
+
+# Statistical Invariance of Betti Numbers
+
+* Consider a family of distributions* `\(\mathcal{P}\)` on `\(\mathcal X \subseteq \mathbb R^D\)` with `\(\mathbb P, \mathbb Q \in \mathcal P\)`
+
+* Given `\(\mathbb{X}_n= \{ \boldsymbol{X}_1, \boldsymbol{X}_2, \dots \boldsymbol{X}_n \} \sim \mathbb{P}\)` and `\(\mathbb{Y}_m= \{ \boldsymbol{Y}_1, \boldsymbol{Y}_2, \dots \boldsymbol{Y}_m \} \sim \mathbb{Q}\)`
+
+.content-box-purple[
+`\(\mathbf{S}(\mathbb{P}^{\otimes n})\!:= \mathbf{S}(\mathbb{X}_n)\!= \frac{1}{n} \Big( \beta_0\big( \mathcal{K}(\mathbb{X}_n,r_n) \big), \beta_1\big( \mathcal{K}(\mathbb{X}_n,r_n) \big), \dots , \beta_d\big( \mathcal{K}(\mathbb{X}_n,r_n) \big) \Big)\)`
+]
+
+* **.purple[Invariance.]** 
+.center[&lt;body&gt;  `\(\bbox[20px, border: 2px solid orange]{  \text{Can we have that } \lim\limits_{n\rightarrow \infty}\mathbf{S}(\mathbb{P}^{\otimes n}) {=} \lim\limits_{m\rightarrow \infty}\mathbf{S}(\mathbb{Q}^{\otimes m}) \text{ ? } }\)`&lt;/body&gt;]
+
+
+* **Example (2).**  Consider `\(\color{red}{\mathcal{P} = \{ \mathcal{N}(\mathbf 0,\boldsymbol{\theta}) : \boldsymbol{\theta} \in \mathcal S^d_{++} \}}\)` and `\(\color{green}{\mathbf{S}(\mathbb{X}_n) = \overline{\mathbf{X}}_n}\)`
+
+.center[
+If `\(\mathbf X_i \sim \mathbb P_{\theta_1}\)` and `\(\mathbf Y_i \sim \mathbb P_{\theta_2}\)` then 
+
+`\(\lim\limits_{n\rightarrow \infty}\overline{\mathbf{X}}_n = \mathbf 0 = \lim\limits_{m\rightarrow \infty}\overline{\mathbf{Y}}_m\)`
+]
+---
+layout: false
+count: false
+
+# Statistical Invariance of Betti Numbers
+
+* Consider a family of distributions* `\(\mathcal{P}\)` on `\(\mathcal X \subseteq \mathbb R^D\)` with `\(\mathbb P, \mathbb Q \in \mathcal P\)`
+
+* Given `\(\mathbb{X}_n= \{ \boldsymbol{X}_1, \boldsymbol{X}_2, \dots \boldsymbol{X}_n \} \sim \mathbb{P}\)` and `\(\mathbb{Y}_m= \{ \boldsymbol{Y}_1, \boldsymbol{Y}_2, \dots \boldsymbol{Y}_m \} \sim \mathbb{Q}\)`
+
+.content-box-purple[
+`\(\mathbf{S}(\mathbb{P}^{\otimes n})\!:= \mathbf{S}(\mathbb{X}_n)\!= \frac{1}{n} \Big( \beta_0\big( \mathcal{K}(\mathbb{X}_n,r_n) \big), \beta_1\big( \mathcal{K}(\mathbb{X}_n,r_n) \big), \dots , \beta_d\big( \mathcal{K}(\mathbb{X}_n,r_n) \big) \Big)\)`
+]
+
+* **.purple[Invariance.]** 
+.center[&lt;body&gt;  `\(\bbox[20px, border: 2px solid orange]{  \text{Can we have that } \lim\limits_{n\rightarrow \infty}\mathbf{S}(\mathbb{P}^{\otimes n}) {=} \lim\limits_{m\rightarrow \infty}\mathbf{S}(\mathbb{Q}^{\otimes m}) \text{ ? } }\)`&lt;/body&gt;]
+
+
+* **Example (3).**  Consider `\(\color{red}{\mathcal{P} = \{ \mathcal{N}(\mathbf 0,\boldsymbol{\theta}) : \boldsymbol{\theta} \in \mathcal S^d_{++} \}}\)` and `\(\color{green}{\mathbf{S}(\mathbb{X}_n) = \text{Cov}(\mathbb{X}_n)}\)`
+
+.center[
+If `\(\mathbf X_i \sim \mathbb P_{\theta_1}\)` and `\(\mathbf Y_i \sim \mathbb P_{\theta_2}\)` then 
+
+`\(\lim\limits_{n\rightarrow \infty}\text{Cov}(\mathbb X_n) = \boldsymbol \theta_1 \neq \boldsymbol \theta_2 = \lim\limits_{m\rightarrow \infty}\text{Cov}(\mathbb Y_m)\)`
+]
 
 ---
 layout: false
@@ -342,80 +394,25 @@ count: false
 
 # Statistical Invariance of Betti Numbers
 
-* Consider a family of distributions* `\(\mathcal{P} = \{\mathbb{P}_\theta : \theta \in \Theta \}\)`
+* Consider a family of distributions* `\(\mathcal{P}\)` on `\(\mathcal X \subseteq \mathbb R^D\)` with `\(\mathbb P, \mathbb Q \in \mathcal P\)`
 
-* Given `\(\mathbb{X}^\theta_n = \{\mathbf{X}^\theta_1,\mathbf{X}^\theta_2,\dots,\mathbf{X}^\theta_n\} \sim \mathbb{P}_\theta\)`, for `\(\theta \in \Theta\)`
-
-.content-box-purple[
-`\(\mathbf{S}(\mathbb{P}_{\theta}^{\otimes n})\!:= \mathbf{S}(\mathbb{X}^\theta_n)\!= \frac{1}{n} \Big( \beta_0\big( \mathcal{K}(\mathbb{X}^\theta_n,r_n) \big), \beta_1\big( \mathcal{K}(\mathbb{X}^\theta_n,r_n) \big), \dots , \beta_d\big( \mathcal{K}(\mathbb{X}^\theta_n,r_n) \big) \Big)\)`
-]
-
-
-* **.purple[Invariance.]** 
-
-.center[&lt;body&gt;  `\(\bbox[20px, border: 2px solid orange]{ \text{For } \theta_1,\theta_2 \in \Theta, \text{ can we have that } \lim\limits_{n\rightarrow \infty}\mathbf{S}(\mathbb{P}_{\theta_1}^{\otimes n}) {=} \lim\limits_{n\rightarrow \infty}\mathbf{S}(\mathbb{P}_{\theta_2}^{\otimes n}) \text{ ? } }\)`&lt;/body&gt;]
-
-
-
-* **Example (2).**
-
-  Consider `\(\color{red}{\mathcal{P} = \{ \mathcal{N}(\mathbf{0},\boldsymbol{\theta}) : \boldsymbol{\theta} \in \mathcal{S^d_{++}} \}}\)` and `\(\color{green}{\mathbf{S}(\mathbb{X}_n) = \bar{\mathbf{X}}_n}\)`
-  
-      `\(\hspace{3.5cm} \lim\limits_{n\rightarrow \infty}\bar{\mathbf{X}}^{\theta_1}_n = 0 = \lim\limits_{n\rightarrow \infty}\bar{\mathbf{X}}^{\theta_2}_n\)`
-
----
-layout: false
-count: false
-
-# Statistical Invariance of Betti Numbers
-
-* Consider a family of distributions* `\(\mathcal{P} = \{\mathbb{P}_\theta : \theta \in \Theta \}\)`
-
-* Given `\(\mathbb{X}^\theta_n = \{\mathbf{X}^\theta_1,\mathbf{X}^\theta_2,\dots,\mathbf{X}^\theta_n\} \sim \mathbb{P}_\theta\)`, for `\(\theta \in \Theta\)`
+* Given `\(\mathbb{X}_n= \{ \boldsymbol{X}_1, \boldsymbol{X}_2, \dots \boldsymbol{X}_n \} \sim \mathbb{P}\)` and `\(\mathbb{Y}_m= \{ \boldsymbol{Y}_1, \boldsymbol{Y}_2, \dots \boldsymbol{Y}_m \} \sim \mathbb{Q}\)`
 
 .content-box-purple[
-`\(\mathbf{S}(\mathbb{P}_{\theta}^{\otimes n})\!:= \mathbf{S}(\mathbb{X}^\theta_n)\!= \frac{1}{n} \Big( \beta_0\big( \mathcal{K}(\mathbb{X}^\theta_n,r_n) \big), \beta_1\big( \mathcal{K}(\mathbb{X}^\theta_n,r_n) \big), \dots , \beta_d\big( \mathcal{K}(\mathbb{X}^\theta_n,r_n) \big) \Big)\)`
+`\(\mathbf{S}(\mathbb{P}^{\otimes n})\!:= \mathbf{S}(\mathbb{X}_n)\!= \frac{1}{n} \Big( \beta_0\big( \mathcal{K}(\mathbb{X}_n,r_n) \big), \beta_1\big( \mathcal{K}(\mathbb{X}_n,r_n) \big), \dots , \beta_d\big( \mathcal{K}(\mathbb{X}_n,r_n) \big) \Big)\)`
 ]
 
-
 * **.purple[Invariance.]** 
-
-.center[&lt;body&gt;  `\(\bbox[20px, border: 2px solid orange]{ \text{For } \theta_1,\theta_2 \in \Theta, \text{ can we have that } \lim\limits_{n\rightarrow \infty}\mathbf{S}(\mathbb{P}_{\theta_1}^{\otimes n}) {=} \lim\limits_{n\rightarrow \infty}\mathbf{S}(\mathbb{P}_{\theta_2}^{\otimes n}) \text{ ? } }\)`&lt;/body&gt;]
-
-
-* **Example (3).**
-
-  Consider `\(\color{red}{\mathcal{P} = \{ \mathcal{N}(\mathbf{0},\boldsymbol{\theta}) : \boldsymbol{\theta} \in \mathcal{S^d_{++}} \}}\)` and `\(\color{green}{\mathbf{S}(\mathbb{X}_n) = \text{Cov}(\mathbb{X}_n)}\)`
-  
-      `\(\hspace{2cm} \lim\limits_{n\rightarrow \infty}\text{Cov}(\mathbb{X}^{\theta_1}_n) = \boldsymbol{\theta}_1 \neq \boldsymbol{\theta}_2 = \lim\limits_{n\rightarrow \infty}\text{Cov}(\mathbb{X}^{\theta_2}_n)\)`
-
----
-layout: false
-count: false
-
-# Statistical Invariance of Betti Numbers
-
-* Consider a family of distributions* `\(\mathcal{P} = \{\mathbb{P}_\theta : \theta \in \Theta \}\)`
-
-* Given `\(\mathbb{X}^\theta_n = \{\mathbf{X}^\theta_1,\mathbf{X}^\theta_2,\dots,\mathbf{X}^\theta_n\} \sim \mathbb{P}_\theta\)`, for `\(\theta \in \Theta\)`
-
-.content-box-purple[
-`\(\mathbf{S}(\mathbb{P}_{\theta}^{\otimes n})\!:= \mathbf{S}(\mathbb{X}^\theta_n)\!= \frac{1}{n} \Big( \beta_0\big( \mathcal{K}(\mathbb{X}^\theta_n,r_n) \big), \beta_1\big( \mathcal{K}(\mathbb{X}^\theta_n,r_n) \big), \dots , \beta_d\big( \mathcal{K}(\mathbb{X}^\theta_n,r_n) \big) \Big)\)`
-]
-
-
-* **.purple[Invariance.]** 
-
-.center[&lt;body&gt;  `\(\bbox[20px, border: 2px solid orange]{ \text{For } \theta_1,\theta_2 \in \Theta, \text{ can we have that } \lim\limits_{n\rightarrow \infty}\mathbf{S}(\mathbb{P}_{\theta_1}^{\otimes n}) {=} \lim\limits_{n\rightarrow \infty}\mathbf{S}(\mathbb{P}_{\theta_2}^{\otimes n}) \text{ ? } }\)`&lt;/body&gt;]
+.center[&lt;body&gt;  `\(\bbox[20px, border: 2px solid orange]{  \text{Can we have that } \lim\limits_{n\rightarrow \infty}\mathbf{S}(\mathbb{P}^{\otimes n}) {=} \lim\limits_{m\rightarrow \infty}\mathbf{S}(\mathbb{Q}^{\otimes m}) \text{ ? } }\)`&lt;/body&gt;]
 
 
 
-* **Assumptions:** 
+* ***Assumptions:** 
 1. .small[&lt;body&gt; `\(\text{dim}(\mathcal{X}) = d \le D\)`. If `\(d &lt; D\)` then `\(\mathcal{X}\)` is a compact, `\(d\)`-dimensional `\(\mathcal{C}^1\)` manifold &lt;/body&gt; ]
 
-1. .small[&lt;body&gt; `\(\mathbb{P}_\theta\)` admits a density `\(f_\theta\)` such that `\(f_\theta \in L_p(\mathcal{X})\)` for all `\(p \in \mathbb{N}\)` &lt;/body&gt; ]
+1. .small[&lt;body&gt; Each `\(\mathbb{P} \in \mathcal P\)` admits a density `\(f\)` such that `\(f \in L_p(\mathcal{X})\)` for all `\(p \in \mathbb{N}\)` &lt;/body&gt; ]
 
-1. `\(\mathcal{K}(\mathbb{X}^\theta_n,r_n)\)` is the Čech complex constructed on `\(\mathbb{X}^\theta_n\)` with `\(r_n = r(n)\)`
+1. .small[&lt;body&gt; `\(\mathcal{K}(\mathbb{X}_n,r_n)\)` is the Čech complex constructed on `\(\mathbb{X}_n\)` with `\(r_n \asymp n^{-1/d}\)` &lt;/body&gt; ]
 
 ---
 layout: false
@@ -423,25 +420,23 @@ count: false
 
 # Statistical Invariance of Betti Numbers
 
-* Consider a family of distributions* `\(\mathcal{P} = \{\mathbb{P}_\theta : \theta \in \Theta \}\)`
+* Consider a family of distributions* `\(\mathcal{P}\)` on `\(\mathcal X \subseteq \mathbb R^D\)` with `\(\mathbb P, \mathbb Q \in \mathcal P\)`
 
-* Given `\(\mathbb{X}^\theta_n = \{\mathbf{X}^\theta_1,\mathbf{X}^\theta_2,\dots,\mathbf{X}^\theta_n\} \sim \mathbb{P}_\theta\)`, for `\(\theta \in \Theta\)`
+* Given `\(\mathbb{X}_n= \{ \boldsymbol{X}_1, \boldsymbol{X}_2, \dots \boldsymbol{X}_n \} \sim \mathbb{P}\)` and `\(\mathbb{Y}_m= \{ \boldsymbol{Y}_1, \boldsymbol{Y}_2, \dots \boldsymbol{Y}_m \} \sim \mathbb{Q}\)`
 
 .content-box-purple[
-`\(\mathbf{S}(\mathbb{P}_{\theta}^{\otimes n})\!:= \mathbf{S}(\mathbb{X}^\theta_n)\!= \frac{1}{n} \Big( \beta_0\big( \mathcal{K}(\mathbb{X}^\theta_n,r_n) \big), \beta_1\big( \mathcal{K}(\mathbb{X}^\theta_n,r_n) \big), \dots , \beta_d\big( \mathcal{K}(\mathbb{X}^\theta_n,r_n) \big) \Big)\)`
+`\(\mathbf{S}(\mathbb{P}^{\otimes n})\!:= \mathbf{S}(\mathbb{X}_n)\!= \frac{1}{n} \Big( \beta_0\big( \mathcal{K}(\mathbb{X}_n,r_n) \big), \beta_1\big( \mathcal{K}(\mathbb{X}_n,r_n) \big), \dots , \beta_d\big( \mathcal{K}(\mathbb{X}_n,r_n) \big) \Big)\)`
 ]
 
-
 * **.purple[Invariance.]** 
-
-.center[&lt;body&gt;  `\(\bbox[20px, border: 2px solid orange]{ \text{For } \theta_1,\theta_2 \in \Theta, \text{ can we have that } \lim\limits_{n\rightarrow \infty}\mathbf{S}(\mathbb{P}_{\theta_1}^{\otimes n}) {=} \lim\limits_{n\rightarrow \infty}\mathbf{S}(\mathbb{P}_{\theta_2}^{\otimes n}) \text{ ? } }\)`&lt;/body&gt;]
+.center[&lt;body&gt;  `\(\bbox[20px, border: 2px solid orange]{  \text{Can we have that } \lim\limits_{n\rightarrow \infty}\mathbf{S}(\mathbb{P}^{\otimes n}) {=} \lim\limits_{m\rightarrow \infty}\mathbf{S}(\mathbb{Q}^{\otimes m}) \text{ ? } }\)`&lt;/body&gt;]
 
 
 * **.purple[Definition.]**
 
 As `\(n \rightarrow \infty\)` and `\(nr_n^d \rightarrow t\)`, the **.purple[thermodynamic limit]** is the functional 
 `\begin{align}
-\mathbf{S}(\mathbb{P}_\theta; t) = \lim_{n \rightarrow\infty}\mathbf{S}(\mathbb{P}_{\theta}^{\otimes n})
+\mathbf{S}(\mathbb{P}; t) = \lim_{n \rightarrow\infty}\mathbf{S}(\mathbb{P}^{\otimes n})
 \end{align}`
 
 
@@ -451,13 +446,34 @@ layout: false
 # `\(\beta\)`-equivalence
 
 .content-box-purple[
-**.purple[Definition.]**  `\(\mathcal{P}\)` admits `\(\beta\)`-equivalence if `\(\mathbf S(\mathbb{P}_\theta; t) = \eta(t)\)` for all `\(\theta \in \Theta\)`
+**.purple[Definition.]**  `\(\mathcal{P}\)` admits `\(\beta\)`-equivalence if `\(\mathbf S(\mathbb{P}; t) = \mathbf S(\mathbb{Q}; t)\)` for all `\(\mathbb P, \mathbb Q \in \mathcal P\)`
 ]
 
 &lt;br&gt;
 
 
 --
+
+* If `\(\mathcal{P} = \{ \mathbb P_\theta : \theta \in \Theta \}\)` is a **parametric** family of distributions:
+
+.content-box-purple.center[
+`\(\mathbf S(\mathbb{P}_\theta; t) = \eta(t)\)` for all `\(\theta \in \Theta\)`
+]
+
+
+---
+count: false
+layout: false
+
+# `\(\beta\)`-equivalence
+
+.content-box-purple[
+**.purple[Definition.]**  `\(\mathcal{P}\)` admits `\(\beta\)`-equivalence if `\(\mathbf S(\mathbb{P}; t) = \mathbf S(\mathbb{Q}; t)\)` for all `\(\mathbb P, \mathbb Q \in \mathcal P\)`
+]
+
+&lt;br&gt;
+
+
 
 * Let `\(\color{purple}{\mathcal{F}}\)` be the family of probability density functions associated with `\(\color{purple}{\mathcal{P}}\)`
 
@@ -679,7 +695,35 @@ count: false
 
 --
 
-`\(\hspace{1cm}\)` **Example.** When `\(\mathcal{X} = \mathbb{R}^d\)` and `\(\mu = \nu_d\)` (Lebesgue), `\(\Psi(x) = x\)`
+`\(\hspace{1cm}\)` **Example (1).** When `\(\mathcal{X} = \mathbb{R}^d\)` and `\(\mu = \nu_d\)` (Lebesgue), `\(\Psi(x) = x\)`
+
+
+---
+layout: false
+count: false
+
+# Statistical Invariance - II
+
+
+- For `\(\mathbb{P}\)` with pdf `\(f\)`, the **.purple[excess mass function]** is given by 
+`\begin{align}
+\hat{f}(t) := \mathbb{P}\big( \{ \mathbf{x} \in \mathcal{X} : f(\mathbf{x}) \ge t \} \big)
+\end{align}`
+
+.content-box-purple.center[
+.large[<span>&lt;i class="fas  fa-hand-point-right faa-horizontal animated "&gt;&lt;/i&gt;</span>] `\(\hspace{0.5cm}\)` If `\(\mathbf{X} \sim f\)` and `\(\mathbf{Y} \sim g\)`, then `\(f(\mathbf{X}) \stackrel{d}{=} g(\mathbf{Y}) \iff \hat{f} = \hat{g}\)`
+]
+
+&lt;br&gt;&lt;br&gt;&lt;br&gt;
+
+
+
+
+- Given a measure `\(\mu\)` on `\(\mathcal{X}\)`, a function `\(\Psi(\cdot)\)` is the .purple[modular character of] `\(\color{purple}{\mu}\)` if &lt;br&gt; for each `\(\phi \in \text{Diff}(\mathcal{X})\)` and `\(\mathbf{y} = \phi(\mathbf{x})\)`, `\(\hspace{0.25cm}\mu(d\mathbf{y}) = \Psi(|\text{det}J_\phi|)\mu(d\mathbf{x})\)`&lt;br&gt;&lt;br&gt;&lt;br&gt;
+
+
+
+`\(\hspace{1cm}\)` **Example (2).** When `\(\mathcal{X} = \mathbb{R}_+\)` and `\(\mu([r,r+dr]) = r^{d-1} dr\)`, `\(\Psi(x) = x^{d-1}\)`
 
 
 ---
@@ -803,8 +847,32 @@ layout: false
 where `\(S_{\theta} = \nabla_{\theta}\log f_\theta\)` is the **score function** used in statistical inference
 ]
 
-
 ---
+layout: false
+
+# Summary
+
+*  `\(\mathcal{P}\)` (equiv. `\(\mathcal F\)`) admits `\(\beta\)`-equivalence if `\(\mathbf S(\mathbb P; t) = \mathbf S(\mathbb Q; t)\)` for all `\(\mathbb P, \mathbb Q \in \mathcal P\)`
+
+--
+* `\(\color{red}{f(\mathbf X) \stackrel{d}{=} g(\mathbf{Y}), \  \forall f,g \in \mathcal F \text{ s.t. } \mathbf X \sim f, \mathbf Y \sim g}\)` `\(\Rightarrow\)` `\(\color{green} {\mathcal P}\)` .green[admits] `\(\color{green}\beta\)`.green[-equivalence]&lt;br&gt;
+  1. via topological groups
+  1. by preserving excess mass
+  1. `\(\big\langle S_\theta, f^k_\theta \big\rangle  = \mathbf 0\)` for all `\(k = 0,1,2,\dots\)`&lt;br&gt;&lt;br&gt;
+
+--
+* **.purple[Other topological summaries:]**
+  1. *.blue[Euler characteristic:]* `\(\mathbf S(\mathbb P^{\otimes n}) = \frac{1}{n} \ \chi\big( \mathcal K(\mathbb X_n, r_n) \big)\)`&lt;br&gt;&lt;br&gt;
+  1. *.blue[Persistent Betti numbers:]* `\(\mathbf S(\mathbb P^{\otimes n})\! =\!\!\frac{1}{n} \beta^{(r,s)}_i\big( \mathcal K(\mathbb X_n, r_n) \big), \ i\!\!=\!0,\!1 \!\dots d\)`&lt;br&gt;&lt;br&gt;
+  1. *.blue[Process level summaries:]* `\(\mathbf{S}(\mathbb P; t) \in \mathscr{D}\big([0,\infty)\big)\)`&lt;br&gt;&lt;br&gt;
+  1. *.blue[Persistence diagrams:]* `\(\mathbf{S}(\mathbb P) = \mathbf{Dgm}(\text{Filt}(\phi_{\mathbb P}))\)`&lt;br&gt;
+      - e.g., if `\(\phi_{\mathbb P} = K_\sigma * f_{\mathbb P}\)`, or `\(\phi_{\mathbb P} = D^K_{\mathbb P}\)`, &lt;br&gt; then `\(K\)` must be a **characteristic kernel**
+
+.tiny[Bobrowski and Mukherjee (2015); Krebs and Polonik (2019); Owada and Thomas (2020); Chazal, Fasy, Lecci, Michel, Rinaldo, and Wasserman (2017)]
+  
+  
+---
+count: false
 layout: false
 class: inverse,center, middle
 
@@ -814,12 +882,21 @@ class: inverse,center, middle
 
 
 ---
+count: false
 layout: false
 # .orange[References]
 
 Bobrowski, O. and M. Kahle (2018). "Topology of random geometric
 complexes: A survey". In: _Journal of Applied and Computational
 Topology_ 1.3-4, pp. 331-–364.
+
+Bobrowski, O. and S. Mukherjee (2015). "The topology of probability
+distributions on manifolds". In: _Probability theory and related
+fields_ 161.3-4, pp. 651-686.
+
+Chazal, F, B. Fasy, F. Lecci, et al. (2017). "Robust topological
+inference: Distance to a measure and kernel distance". In: _The Journal
+of Machine Learning Research_ 18.1, pp. 5845-5884.
 
 Eaton, M. L. (1989). _Group Invariance Applications in Statistics_.
 Hayward, CA and Alexandria, VA: Institute of Mathematical Statistics
@@ -829,17 +906,26 @@ Goel, A, K. D. Trinh, and K. Tsunoda (2019). "Strong law of large
 numbers for Betti numbers in the thermodynamic regime". In: _Journal of
 Statistical Physics_ 174.4, pp. 865-892.
 
+---
+count: false
+layout: false
+# .orange[References]
+
 Kahle, M. and E. Meckes (2013). "Limit theorems for Betti numbers of
 random simplicial complexes". In: _Homology Homotopy Appl._ 15.1, pp.
 343-374.
 
+Krebs, J. T. and W. Polonik (2019). "On the asymptotic normality of
+persistent Betti numbers". In: _arXiv preprint arXiv:1903.03280_.
+
+Owada, T. and A. M. Thomas (2020). "Limit theorems for process-level
+Betti numbers for sparse and critical regimes". In: _Advances in
+Applied Probability_ 52.1, p. 1–31. DOI:
+[10.1017/apr.2019.50](https://doi.org/10.1017%2Fapr.2019.50).
+
 Trinh, K. D. (2017). "A remark on the convergence of Betti numbers in
 the thermodynamic regime". In: _Pacific Journal of Mathematics for
 Industry_ 9.1, p. 4.
-
----
-layout: false
-# .orange[References]
 
 Wijsman, R. A. (1990). _Invariant Measures on Groups and Their Use in
 Statistics_. Hayward, CA: Institute of Mathematical Statistics.
