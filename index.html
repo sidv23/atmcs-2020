@@ -545,6 +545,16 @@ count: false
 
 .tiny.left[.caption[Eaton (1989); Wijsman (1990)]]
 
+---
+class: show-11
+count: false
+
+&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;
+
+`\(\mathbf{X_\theta} \sim f_\theta \ \ \  \longrightarrow  \ \ \ Z_\theta = f_\theta(\mathbf X_\theta) \ \ \ \longrightarrow \ \ \ f_{Z_\theta}\)` is `\(\mathcal G\)`-invariant
+
+.tiny.left[.caption[Eaton (1989); Wijsman (1990)]]
+
 
 
 
@@ -587,17 +597,17 @@ $$
 --
 * .small[  &lt;body&gt; `\(\mathcal{X} = [0,1]^2, \hspace{0.2cm} \mathcal{Y} = \mathbb{R}^2,\)` and `\(\Psi : \mathcal{X} \rightarrow \mathcal{Y}\)` such that `\((x_1,x_2) \mapsto (\Phi^{-1}(x_1),\Phi^{-1}(x_2))\)` &lt;/body&gt; ]&lt;br&gt;&lt;br&gt;
 
-* .small[  &lt;body&gt;   `\(\mathcal G = S\mathcal{O}(d)\)` for which `\(g_\theta = \smash{\begin{pmatrix} \cos(\theta) &amp; \sin(\theta) \\ -\sin(\theta) &amp; \cos(\theta)  \end{pmatrix}}\)` and `\(T(\mathbf{y}) = ||\mathbf{y}||\)` &lt;/body&gt; ] &lt;br&gt;&lt;br&gt;
+* .small[  &lt;body&gt;   `\(\mathcal G = S\mathcal{O}(2)\)` for which `\(g_\theta = \smash{\begin{pmatrix} \cos(\theta) &amp; \sin(\theta) \\ -\sin(\theta) &amp; \cos(\theta)  \end{pmatrix}}\)` and `\(T(\mathbf{y}) = ||\mathbf{y}||\)` &lt;/body&gt; ] &lt;br&gt;&lt;br&gt;
 
 * .small[  &lt;body&gt;   `\(\xi:\mathcal{Y} \rightarrow \mathbb{R}\)` is given by `\(\xi(\mathbf{y}) = \big( (1,0)^\top\mathbf{y}  \big)^2\)` &lt;/body&gt;]&lt;br&gt;
 
 --
-* .small[  &lt;body&gt; Then we can express `\(\bbox[2pt,#ff9166]{f_\theta(x,y) = \xi(g_\theta \circ \Psi(x,y))}\)`   &lt;/body&gt; ]&lt;br&gt;&lt;br&gt;
+* .small[  &lt;body&gt; Then we can express `\(\bbox[2pt,#ff9166]{f_\theta(x_1,x_2) = \xi(g_\theta \circ \Psi(x_1,x_2))}\)`   &lt;/body&gt; ]&lt;br&gt;&lt;br&gt;
 
 --
 * .small[ &lt;body&gt; **.red[Jacobian condition:]** For `\(\mathbf{y} = (y_1,y_2) \in \mathcal{Y},\)` observe `\(\Psi^{-1}(y_1,y_2) = (\Phi(y_1),\Phi(y_2))\)` &lt;/body&gt; ]
 `\begin{align}
-\text{det}(J_{\Psi^{-1}}(\mathbf{y})) = \phi(y_1)\cdot\phi(y_2) = \exp\big( -\frac{y_1^2}{2} -\frac{y_2^2}{2} \big) = \exp\big( -\frac{1}{2}T(\mathbf{y}) \big)
+\text{det}(J_{\Psi^{-1}}(\mathbf{y})) = \phi(y_1)\cdot\phi(y_2) = \exp\Big( -\frac{y_1^2}{2} -\frac{y_2^2}{2} \Big) = \exp\Big( -\frac{1}{2}T(\mathbf{y})^2 \Big)
 \end{align}`
 
 
